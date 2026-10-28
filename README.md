@@ -1,32 +1,32 @@
-# Portfólio de Ciência de Dados — Eurismar S. Alves
+# Data Science Portfolio — Eurismar S. Alves
 
-Bem-vindo ao meu portfólio profissional. Aqui reúno projetos práticos de tecnologia, análise de dados e desenvolvimento de aplicações.
+Welcome to my professional portfolio. This repository showcases practical projects in technology, data analysis, and application development.
 
-## Projeto em destaque: Aplicação Web
+## Featured Project: Web Application
 
-- **Aplicação publicada:** https://ais-dev-cefbwgi7gtyhyrfvgscgir-301191374379.us-west2.run.app/
-- **Tipo:** Aplicação web
-- **Objetivo:** Demonstrar um projeto funcional desenvolvido e publicado na web.
-- **Status:** Aplicação disponível pelo link acima.
+- **Live application:** https://ais-dev-cefbwgi7gtyhyrfvgscgir-301191374379.us-west2.run.app/
+- **Type:** Web application
+- **Purpose:** Demonstrate a functional project published on the web.
+- **Status:** Available at the link above.
 
-### Como acessar
-Acesse a aplicação publicada:  
-[**Abrir o projeto**](https://ais-dev-cefbwgi7gtyhyrfvgscgir-301191374379.us-west2.run.app/)
+### Access the application
 
-> **Observação:** este repositório documenta e apresenta a aplicação publicada. O código-fonte não foi incluído porque não estava disponível a partir do link da aplicação. Assim que os arquivos do projeto forem enviados ou exportados, eles poderão ser adicionados aqui para permitir a análise técnica e a reprodução do projeto.
+[**Open the project**](https://ais-dev-cefbwgi7gtyhyrfvgscgir-301191374379.us-west2.run.app/)
 
-## Sobre mim
+> **Note:** This repository currently documents and presents the published application. The source code has not been included because it was not available from the live application link. Once the project files are exported or provided, they can be added here so the code can be reviewed and the project can be reproduced.
 
-Sou Eurismar S. Alves e estou construindo meu portfólio em tecnologia, com interesse em Ciência de Dados, análise de dados, automação e desenvolvimento de soluções digitais.
+## About Me
 
-## Tecnologias e competências em desenvolvimento
+I am Eurismar S. Alves, building my professional portfolio in technology, with interests in data science, data analysis, automation, and digital solutions.
 
-- Python e SQL
-- Análise e visualização de dados
-- Power BI e Excel
-- Estatística e séries temporais
-- Desenvolvimento e documentação de projetos
+## Skills and Technologies
 
-## Contato e portfólio
+- Python and SQL
+- Data analysis and visualization
+- Power BI and Excel
+- Statistics and time-series analysis
+- Project development and documentation
+
+## Contact and Portfolio
 
 - GitHub: https://github.com/eurismarsalves7-dev
