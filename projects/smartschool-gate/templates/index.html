@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SmartSchool Gate | Demonstração</title>
+  <style>
+    :root { font-family: Inter, system-ui, Arial, sans-serif; color: #172033; background: #f3f6fb; }
+    body { margin: 0; }
+    header { background: #102a43; color: white; padding: 1.5rem max(1rem, calc((100% - 1000px)/2)); }
+    main { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
+    .card { background: white; padding: 1.25rem; border-radius: 14px; margin-bottom: 1rem; box-shadow: 0 4px 18px #102a4310; }
+    .notice { border-left: 5px solid #e0a126; background: #fff8e6; padding: 1rem; border-radius: 8px; }
+    .flash { padding: .75rem 1rem; background: #edf2f7; border-radius: 8px; margin: .5rem 0; }
+    .danger { background: #fff0f0; } .warning { background: #fff8e6; }
+    button { border: 0; background: #1769aa; color: white; padding: .75rem 1rem; border-radius: 8px; cursor: pointer; font-weight: 600; }
+    input { display: block; margin: 1rem 0; max-width: 100%; }
+    table { width: 100%; border-collapse: collapse; } th, td { padding: .7rem; border-bottom: 1px solid #e5eaf0; text-align: left; overflow-wrap: anywhere; }
+    .muted { color: #5c6b7a; font-size: .95rem; }
+    code { background: #eef2f7; padding: .1rem .3rem; border-radius: 4px; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>SmartSchool Gate</h1>
+  <p>Protótipo de leitura de placas e consulta de cadastro escolar</p>
+</header>
+<main>
+  <section class="notice">
+    <strong>Ambiente de demonstração.</strong>
+    Use somente imagens autorizadas e dados fictícios. OCR pode errar; este sistema não autoriza sozinho a retirada de alunos.
+  </section>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, message in messages %}
+      <p class="flash {{ category }}">{{ message }}</p>
+    {% endfor %}
+  {% endwith %}
+
+  <section class="card">
+    <h2>Analisar imagem de veículo</h2>
+    <p class="muted">Envie uma imagem JPG, PNG ou WEBP de até 8 MB. A imagem é processada em memória e não é salva no servidor.</p>
+    <form action="{{ url_for('scan') }}" method="post" enctype="multipart/form-data">
+      <label for="vehicle_image">Imagem do veículo</label>
+      <input id="vehicle_image" name="vehicle_image" type="file" accept=".jpg,.jpeg,.png,.webp" required>
+      <button type="submit">Ler placa e consultar cadastro</button>
+    </form>
+  </section>
+
+  {% if result %}
+  <section class="card">
+    <h2>Resultado da análise</h2>
+    <p><strong>Placa candidata:</strong> {{ result.plate }}</p>
+    <p>{{ result.message }}</p>
+    {% if result.vehicle %}
+      <h3>Cadastro fictício encontrado</h3>
+      <p><strong>Responsável:</strong> {{ result.vehicle.responsible_name }}</p>
+      <p><strong>Aluno:</strong> {{ result.vehicle.student_name }}</p>
+      <p><strong>Turma:</strong> {{ result.vehicle.class_name }}</p>
+      <p><strong>Sala:</strong> {{ result.vehicle.room or "Não informada" }}</p>
+    {% endif %}
+    {% if result.ocr_text %}
+      <details><summary>Texto bruto retornado pelo OCR</summary><p>{{ result.ocr_text }}</p></details>
+    {% endif %}
+  </section>
+  {% endif %}
+
+  <section class="card">
+    <h2>Eventos recentes</h2>
+    {% if events %}
+    <div style="overflow-x:auto">
+      <table>
+        <thead><tr><th>Data/hora (UTC)</th><th>Placa candidata</th><th>Resultado</th></tr></thead>
+        <tbody>
+        {% for event in events %}
+          <tr><td>{{ event.created_at }}</td><td>{{ event.plate or "Não identificada" }}</td><td>{{ event.status }}</td></tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+      <p class="muted">Ainda não há eventos. Faça uma análise para testar o fluxo.</p>
+    {% endif %}
+  </section>
+  <p class="muted">Projeto de portfólio por Eurismar S. Alves · Prova de conceito sem integração com câmeras ao vivo ou reconhecimento facial.</p>
+</main>
+</body>
+</html>
