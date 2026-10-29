@@ -15,6 +15,13 @@ Welcome to my professional portfolio. This repository showcases practical projec
 
 > **Note:** This repository currently documents and presents the published application. The source code has not been included because it was not available from the live application link. Once the project files are exported or provided, they can be added here so the code can be reviewed and the project can be reproduced.
 
+## Featured Project: SmartSchool Gate
+
+- **Project:** SmartSchool Gate — school pickup and vehicle plate OCR proof of concept.
+- **Technologies:** Python, Flask, OpenCV, EasyOCR, SQLAlchemy, PostgreSQL/SQLite.
+- **Source code:** [Open the SmartSchool Gate project](projects/smartschool-gate/README.md).
+- **Scope:** Demonstration using uploaded images and fictional data; no live camera integration or facial recognition is implemented.
+
 ## About Me
 
 I am Eurismar S. Alves, building my professional portfolio in technology, with interests in data science, data analysis, automation, and digital solutions.
